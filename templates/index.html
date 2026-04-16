@@ -1,0 +1,251 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto AI Trader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="bot-info">
+                <div class="avatar">
+                    <i class="fa-solid fa-robot"></i>
+                    <span class="status-dot"></span>
+                </div>
+                <div>
+                    <h2>Binance AI</h2>
+                    <p>Testnet Connected</p>
+                </div>
+            </div>
+            <div class="balance-box">
+                <span>USDT Balance</span>
+                <h3 id="balance-display">Loading...</h3>
+            </div>
+        </div>
+
+        <div class="chat-body" id="chat-box">
+            <div class="message bot-msg">
+                <div class="msg-content">
+                    Hello! I am ready to trade on Binance Futures. 
+                    <br>Current Pair: <b>BTC/USDT</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <div class="quick-actions">
+                <button class="action-btn buy" onclick="executeTrade('BUY')">
+                    <i class="fa-solid fa-arrow-trend-up"></i> LONG (Buy)
+                </button>
+                <button class="action-btn sell" onclick="executeTrade('SELL')">
+                    <i class="fa-solid fa-arrow-trend-down"></i> SHORT (Sell)
+                </button>
+                <button class="action-btn refresh" onclick="fetchBalance()">
+                    <i class="fa-solid fa-rotate"></i> Balance
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> -->
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binance Terminal v2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="terminal-container">
+        
+        <div class="header">
+            <div class="bot-identity">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="status-dot" id="status-dot"></div>
+                </div>
+                <div class="bot-info">
+                    <h2>Binance AI</h2>
+                    <p id="connection-text">Connecting...</p>
+                </div>
+            </div>
+
+            <div class="mode-toggle">
+                <span class="mode-label">DEMO</span>
+                <label class="switch">
+                    <input type="checkbox" id="mode-switch">
+                    <span class="slider"></span>
+                </label>
+                <span class="mode-label">REAL</span>
+            </div>
+        </div>
+
+        <div class="balance-bar">
+            <span class="balance-label">USDT BALANCE</span>
+            <span class="balance-value" id="balance-display">$0.00</span>
+        </div>
+
+        <div class="chat-area" id="chat-feed">
+            <div class="message msg-bot">
+                System Initialized. <br>
+                Select <b>DEMO</b> mode to simulate trades.<br>
+                Select <b>REAL</b> mode to use Testnet API.
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="btn-grid">
+                <button class="btn btn-buy" onclick="trade('BUY')">
+                    <i class="fa-solid fa-arrow-trend-up"></i> Long (Buy)
+                </button>
+                <button class="btn btn-sell" onclick="trade('SELL')">
+                    <i class="fa-solid fa-arrow-trend-down"></i> Short (Sell)
+                </button>
+                <button class="btn btn-refresh" onclick="fetchBalance()">
+                    <i class="fa-solid fa-rotate"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binance Terminal v2</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="terminal-container">
+
+    <div class="header">
+        <div class="bot-identity">
+            <div class="avatar-container">
+                <i class="fa-solid fa-robot"></i>
+                <div class="status-dot" id="status-dot"></div>
+            </div>
+            <div class="bot-info">
+                <h2>Binance AI</h2>
+                <p id="connection-text">Ready</p>
+            </div>
+        </div>
+
+        <div class="mode-toggle">
+            <span class="mode-label">DEMO</span>
+            <label class="switch">
+                <input type="checkbox" id="mode-switch">
+                <span class="slider"></span>
+            </label>
+            <span class="mode-label">REAL</span>
+        </div>
+    </div>
+
+    <div class="balance-bar">
+        <span class="balance-label">USDT BALANCE</span>
+        <span class="balance-value" id="balance-display">$0.00</span>
+    </div>
+
+    <div class="chat-area" id="chat-feed">
+        <div class="message msg-bot">
+            System Initialized.<br>
+            Toggle REAL mode to enable trading.
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="btn-grid">
+            <button class="btn btn-buy" onclick="trade('BUY')">
+                <i class="fa-solid fa-arrow-trend-up"></i> Long (Buy)
+            </button>
+            <button class="btn btn-sell" onclick="trade('SELL')">
+                <i class="fa-solid fa-arrow-trend-down"></i> Short (Sell)
+            </button>
+            <button class="btn btn-refresh" onclick="fetchBalance()">
+                <i class="fa-solid fa-rotate"></i>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+/* ---------- SAFE API HELPERS ---------- */
+
+function logMessage(text) {
+    const chat = document.getElementById("chat-feed");
+    const div = document.createElement("div");
+    div.className = "message msg-bot";
+    div.innerText = text;
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+}
+
+/* ---------- TOGGLE BOT (FIXED) ---------- */
+document.getElementById("mode-switch").addEventListener("change", () => {
+    fetch("/api/toggle", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(res => res.json())
+    .then(data => {
+        logMessage(data.message);
+    })
+    .catch(() => {
+        logMessage("Toggle failed");
+    });
+});
+
+/* ---------- BALANCE ---------- */
+function fetchBalance() {
+    fetch("/api/balance")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("balance-display").innerText =
+                `$${data.balance}`;
+        });
+}
+
+/* ---------- TRADE ---------- */
+function trade(side) {
+    fetch("/api/trade", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ side })
+    })
+    .then(res => res.json())
+    .then(data => {
+        logMessage(data.message || "Trade executed");
+    })
+    .catch(() => {
+        logMessage("Trade failed");
+    });
+}
+</script>
+
+</body>
+</html>
