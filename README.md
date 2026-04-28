@@ -1,4 +1,4 @@
-# 🤖 Crypto Bot
+# 🤖 Crypto Bot UI
 
 A web-based **Cryptocurrency Trading Bot Dashboard** built with **Python (Flask)** on the backend and **HTML/CSS/JavaScript** on the frontend. It connects to the **Binance Futures Testnet** and provides a clean UI to monitor your account balance, execute live BUY/SELL trades, and toggle the bot on or off — all from your browser.
 
